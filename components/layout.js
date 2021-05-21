@@ -1,17 +1,22 @@
-import Head from 'next/head'
-import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
-import Link from 'next/link'
+import Head from 'next/head';
+import Link from 'next/link';
 
-const name = 'KH\'s devlog'
-export const siteTitle = 'Next.js Sample Website'
+import { GoogleFonts } from "next-google-fonts";
+
+import utilStyles from '../styles/utils.module.css';
+import headerStyles from '../styles/layout/header.module.css';
+import mainStyles from '../styles/layout/main.module.css';
+
+const name = 'kh_Blog';
+export const siteTitle = 'kh_Devlog';
 
 export default function Layout({ children, home }) {
   return (
-    <div className={styles.container}>
+    <>
+      <GoogleFonts href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;400;600&display=swap"/>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
-        <meta
+        {/* <link rel="icon" href="/favicon.ico" /> */}
+        {/* <meta
           name="description"
           content="Learn how to build a personal website using Next.js"
         />
@@ -22,9 +27,32 @@ export default function Layout({ children, home }) {
           )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.zeit.co%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
         />
         <meta name="og:title" content={siteTitle} />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="summary_large_image" /> */}
       </Head>
-      <header className={styles.header}>
+        <header className={headerStyles.header}>
+          <div className={headerStyles.logo}>
+            <p>kyuhyun</p>
+            <p>han - </p>
+          </div>
+          <nav className={headerStyles.nav}>
+            <div className={headerStyles.navItem}>
+              ABOUT
+            </div>
+            <div className={headerStyles.navItem}>
+              JavaScript
+            </div>
+            <div className={headerStyles.navItem}>
+              React
+            </div>
+            <div className={headerStyles.navItem}>
+              Front End
+            </div>
+            <div className={headerStyles.navItem}>
+              Log
+            </div>
+          </nav>
+        </header>
+      {/* <header className={styles.header}>
         {home ? (
           <>
             <img
@@ -52,15 +80,15 @@ export default function Layout({ children, home }) {
             </h2>
           </>
         )}
-      </header>
+      </header> */}
       <main>{children}</main>
       {!home && (
-        <div className={styles.backToHome}>
+        <div className={mainStyles.backToHome}>
           <Link href="/">
             <a>← Back to home</a>
           </Link>
         </div>
       )}
-    </div>
+    </>
   )
 }

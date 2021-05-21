@@ -12,7 +12,7 @@ export default function Home({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>프론트엔드 개발 JavaScript React Redux Node.js</p>
+        <p>프론트엔드 </p>
         <p>
           <a href="https://www.github.com/kyuhyunhan">GitHub</a>
         </p>
