@@ -1,1 +1,1 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+[블로그 바로가기](https://kh-devlog-git-main.khhan.vercel.app)
