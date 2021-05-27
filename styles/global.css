@@ -21,7 +21,9 @@ p,
 figure,
 blockquote,
 dl,
-dd {
+dd,
+ul,
+ol {
   padding: 0;
   margin: 0;
 }
@@ -32,7 +34,7 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 img,
@@ -41,8 +43,8 @@ picture {
   display: block;
 }
 
-ul[role='list'],
-ol[role='list'] {
+ul,
+ol {
   list-style: none;
 }
 

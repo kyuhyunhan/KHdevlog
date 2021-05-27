@@ -1,3 +1,13 @@
+.main {
+    margin: 10rem 15% 0;
+}
+.about {
+    padding-top: 50px;
+}
+.list {
+    padding-top: 150px;
+}
+
 .backToHome {
     margin: 3rem 0 0;
 }

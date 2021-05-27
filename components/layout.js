@@ -7,14 +7,15 @@ import utilStyles from '../styles/utils.module.css';
 import headerStyles from '../styles/layout/header.module.css';
 import mainStyles from '../styles/layout/main.module.css';
 
-const name = 'kh_Blog';
-export const siteTitle = 'kh_Devlog';
+const name = 'kyuhyun han';
+export const siteTitle = 'kyuhyun han blog';
 
-export default function Layout({ children, home }) {
+export default function Layout({ children, home, about }) {
   return (
     <>
       <GoogleFonts href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;400;600&display=swap"/>
       <Head>
+        <title>{siteTitle}</title>
         {/* <link rel="icon" href="/favicon.ico" /> */}
         {/* <meta
           name="description"
@@ -35,21 +36,31 @@ export default function Layout({ children, home }) {
             <p>han - </p>
           </div>
           <nav className={headerStyles.nav}>
-            <div className={headerStyles.navItem}>
-              ABOUT
-            </div>
-            <div className={headerStyles.navItem}>
-              JavaScript
-            </div>
-            <div className={headerStyles.navItem}>
-              React
-            </div>
-            <div className={headerStyles.navItem}>
-              Front End
-            </div>
-            <div className={headerStyles.navItem}>
-              Log
-            </div>
+            <Link href="">
+              <a className={headerStyles.navItem}>
+                ABOUT
+              </a>
+            </Link>
+            <Link href="">
+              <a className={headerStyles.navItem}>
+                JAVASCRIPT
+              </a>
+            </Link>
+            <Link href="">
+              <a className={headerStyles.navItem}>
+                REACT
+              </a>
+            </Link>
+            <Link href="">
+              <a className={headerStyles.navItem}>
+                OTHERS
+              </a>
+            </Link>
+            <Link href="">
+              <a className={headerStyles.navItem}>
+                LOG
+              </a>
+            </Link>
           </nav>
         </header>
       {/* <header className={styles.header}>
@@ -81,14 +92,27 @@ export default function Layout({ children, home }) {
           </>
         )}
       </header> */}
-      <main>{children}</main>
-      {!home && (
+      <main className={mainStyles.main}>
+        {about ? 
+        (
+          <article className={mainStyles.about}>
+            {children}
+          </article>
+        )
+        : (
+          <article className={mainStyles.list}>
+            {children}
+          </article>
+        )}
+        {/* {!home && (
         <div className={mainStyles.backToHome}>
           <Link href="/">
             <a>← Back to home</a>
           </Link>
         </div>
-      )}
+      )} */}
+      </main>
+      
     </>
   )
 }

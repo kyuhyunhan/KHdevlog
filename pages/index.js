@@ -1,17 +1,31 @@
-import Head from 'next/head'
-import Layout, { siteTitle } from '../components/layout'
-import utilStyles from '../styles/utils.module.css'
-import { getSortedPostsData } from '../lib/posts'
-import Link from 'next/link'
-import Date from '../components/date'
+import Head from 'next/head';
+import Layout, { siteTitle } from '../components/layout';
+import utilStyles from '../styles/utils.module.css';
+import { getAllPosts } from '../lib/posts';
+import Link from 'next/link';
 
-export default function Home({ allPostsData }) {
+export default function Home({ allPosts }) {
+  const postsList = allPosts.map(({ id, title, date, content }) => {
+    return (
+      <li className={utilStyles.postListItem} key={id}>
+        <div className={utilStyles.alignCenter}>
+          <div className={utilStyles.heading2Xl}>{title}</div>
+        </div>
+        <div className={utilStyles.alignCenter}>
+          <div className={utilStyles.headingMd}>{date}</div>
+        </div>
+        <div>
+          {content}
+        </div>
+      </li>
+    );
+  });
+
   return (
     <Layout home>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
-      <section className={utilStyles.headingMd}>
+      <ul>{postsList}</ul>
+
+      {/* <section className={utilStyles.headingMd}>
         <p>프론트엔드 </p>
         <p>
           <a href="https://www.github.com/kyuhyunhan">GitHub</a>
@@ -32,16 +46,16 @@ export default function Home({ allPostsData }) {
             </li>
           ))}
         </ul>
-      </section>
+      </section> */}
     </Layout>
-  )
+  );
 }
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData()
+  const allPosts = getAllPosts();
   return {
     props: {
-      allPostsData
-    }
-  }
+      allPosts,
+    },
+  };
 }
