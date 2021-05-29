@@ -4,7 +4,7 @@ export default function About() {
   return (
    <Layout>
      <div>
-       about.js TEST
+       about.js TEST edit test
      </div>
    </Layout>
   );
