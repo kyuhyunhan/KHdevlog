@@ -36,7 +36,7 @@ export default function Layout({ children, home, about }) {
             <p>han - </p>
           </div>
           <nav className={headerStyles.nav}>
-            <Link href="">
+            <Link href="about">
               <a className={headerStyles.navItem}>
                 ABOUT
               </a>
