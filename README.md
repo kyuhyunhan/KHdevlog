@@ -1,1 +1,1 @@
-[블로그 바로가기](https://kh-devlog-git-main.khhan.vercel.app)
+[블로그 바로가기](https://khblog-khhan.vercel.app/)
