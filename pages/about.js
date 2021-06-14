@@ -9,28 +9,50 @@ import { AiFillFacebook } from "react-icons/ai";
 export default function About() {
   return (
     <Layout>
-      <div className={utilStyles.heading2Xl}>한규현 KyuHyun Han</div>
+      <div className={`${utilStyles.heading2Xl} ${utilStyles.padding1px}`}>
+        한규현 KyuHyun Han
+      </div>
       <div className={utilStyles.headingLg}>Front-end developer</div>
       <div className={aboutStyles.profileLinks}>
-        <div className={aboutStyles.profileLink}>
-          <DiGithubBadge size={30} />
+        <div>
+          <a
+            className={aboutStyles.profileLink}
+            href="https://github.com/kyuhyunhan"
+            target="_blank"
+          >
+            <DiGithubBadge size={33} />
+            <span className={aboutStyles.profileLinkText}>Github</span>
+          </a>
         </div>
-        <div className={aboutStyles.profileLink}>
-          <AiFillFacebook size={30} />
+        <div>
+          <a
+            className={aboutStyles.profileLink}
+            href="https://www.facebook.com/profile.php?id=100015816003239"
+            target="_blank"
+          >
+            <AiFillFacebook size={30} />
+            <span className={aboutStyles.profileLinkText}>Facebook</span>
+          </a>
         </div>
         <div className={aboutStyles.profileLink}>
           <AiTwotoneMail size={30} />
+          <span className={aboutStyles.profileLinkText}>
+            kyuhyunhaan@gmail.com
+          </span>
         </div>
       </div>
 
       <div className={aboutStyles.skills}>
-        <div>
-          <img src="images/JSlogo.svg" />
-          JavaScript
+        <div className={aboutStyles.skill}>
+          <img className={aboutStyles.skillImg} src="images/JSlogo.svg" />
+          <div>JavaScript</div>
         </div>
-        <div>
-          <img src="images/Reactlogo.svg" />
-          React
+        <div className={aboutStyles.skill}>
+          <img
+            className={`${aboutStyles.skillImg} ${aboutStyles.reactImg}`}
+            src="images/Reactlogo.svg"
+          />
+          <div>React</div>
         </div>
       </div>
       <div>CSS를 멋지게 다루는 기술과 방법론을 생각합니다.</div>
